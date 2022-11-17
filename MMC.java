@@ -20,6 +20,15 @@ public class MMC {
       int[] num = nuns(texto2,quant);
       int primo = 2;
       boolean tudo1 = tudo1(num);
+      int mmc = 1;
+      while(!tudo1){
+          while(!primoDivide(primo,num)){
+             primo=proximoPrimo(primo); 
+          }
+          divisão(primo,num);
+          mmc= mmc*primo;
+      }
+        System.out.println(mmc);
       
     }
     public static int[]nuns(String texto1,int quant){
@@ -51,4 +60,15 @@ public class MMC {
         }
     return tudo1;       
 }
+    public static boolean primoDivide(int primo,int[]vet){
+        boolean resp = false;
+        return resp;
+    }
+    public static int proximoPrimo(int primo){
+        int resp =0;
+        return resp;
+    }
+    public static void divisão(int Primo,int[] vet){
+        
+    }
 }
