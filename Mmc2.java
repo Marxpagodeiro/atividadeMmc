@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author 20222tpmi0035
  */
-public class Mmc {
+public class Mmc2 {
 
     /**
      * @param args the command line arguments
