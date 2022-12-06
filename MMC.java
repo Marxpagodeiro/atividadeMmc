@@ -15,6 +15,7 @@ public class MMC {
     public static void main(String[] args) {
         String texto1 = "De quantos numeros você quer tirar o mmc?";
         String texto2 = "Digite os numeros que seram usados na operação";
+        String texto3 = "O minimo multiplo comum desses numeros é ";
         int quant=quant(texto1);
         int[] num = nuns(texto2,quant);
         int primo= 1;
@@ -46,9 +47,8 @@ public class MMC {
                 mmc = mmc * primo;
             }
             fimloop = tudo1(num);
-            
         }
-        System.out.println("O minimo multiplo comum desses numeros é " + mmc);
+        System.out.println(texto3 + mmc);
     }
     
     
