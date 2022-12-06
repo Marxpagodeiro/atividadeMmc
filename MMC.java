@@ -19,13 +19,10 @@ public class MMC {
         int[] num = nuns(texto2,quant);
         int primo= 1;
         int mmc =1;
-        int nDiv = 0;
         boolean[] primoDiv = new boolean[quant];
-        primoDiv = primoDiv(primo,num,primoDiv);
         boolean fimloop = false;
         while (fimloop == false) {
             boolean printado = false;
-            nDiv = 0;
             for (int j = 0; j < num.length; j++) {
                 primo = 2;
                 if (num[j] > 1) {
