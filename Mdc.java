@@ -13,20 +13,23 @@ import java.util.Scanner;
  */
 public class Mdc {
     public static void main(String[] args) {
-        String texto1 = "De quantos numeros você quer tirar o mmc?";
+        String texto1 = "De quantos numeros você quer tirar o mdc?";
         String texto2 = "Digite o numero que sera usado na operação";
+        String texto3 = "O minimo multiplo comum desses numeros é ";
+        String texto4 = "O minimo divisor comum desses numeros é ";
         int quant=quant(texto1);
         int[] num = nuns(texto2,quant);
         int primo= 1;
         int priDivIg = 1;
-        int mdc =1;
-        int nDiv = 0;
+        int mdc =0;
+        int mmc = 1;
         boolean[] primoDiv = new boolean[quant];
         primoDiv = primoDiv(primo,num,primoDiv);
         boolean fimloop = false;
+        mdc = mdcnums(num);
+
         while (fimloop == false) {
             boolean printado = false;
-            nDiv = 0;
             for (int j = 0; j < num.length; j++) {
                 primo = 2;
                 if (num[j] > 1) {
@@ -36,8 +39,7 @@ public class Mdc {
                         if(primoDiv[j]){
                             print(num, primo);
                             divisao(num, primo,primoDiv);
-                            priDivIg = primoDivIgual(primo,num,quant);
-                            mdc = mdc * priDivIg;
+                            mmc = mmc * primo;
                             printado = true;
                             break;
                         }
@@ -48,13 +50,14 @@ public class Mdc {
                 primoDiv(primo,num,primoDiv);
                 print(num, primo);
                 divisao(num, primo,primoDiv);
-                priDivIg = primoDivIgual(primo,num,quant);
-                mdc = mdc * priDivIg;
+                mmc = mmc * primo;
             }
             fimloop = tudo1(num);
             
         }
-        System.out.println("O minimo multiplo comum desses numeros é " + mdc);
+        System.out.println(texto3 + mmc);
+        System.out.println(texto4 + mdc);
+        
     }
     
     
@@ -125,18 +128,21 @@ public class Mdc {
         }
         return primoDiv;
     }
-    public static int primoDivIgual(int primo,int []vet,int quant){
-        int primoigual = 1;
-        int cont= 0;
-        for (int i = 0; i < vet.length; i++) {
-            if (vet[i] % primo == 0) {
-                cont++;
-            }
+    public static int mdcnums(int[] vet){
+        
+        int resp = vet[0];
+        for(int i = 1; i < vet.length; i++){
+            resp = mdcalculo(resp, vet[i]);
         }
-        if(cont == quant){
-            primoigual=primo;
+        return resp;
+    }
+    public static int mdcalculo(int x, int y){        
+        while(y != 0){
+            int r = x % y;
+            x = y;
+            y = r;
         }
-        return primoigual;
+        return x;
     }
     public static void divisao(int[] vet,int primo,boolean[] primoDiv){
         for (int i = 0; i < vet.length; i++) {
