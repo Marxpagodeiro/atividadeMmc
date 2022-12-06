@@ -13,8 +13,8 @@ import java.util.Scanner;
  */
 public class Mdc {
     public static void main(String[] args) {
-        String texto1 = "De quantos numeros você quer tirar o mdc?";
-        String texto2 = "Digite o numero que sera usado na operação";
+        String texto1 = "De quantos numeros você quer tirar o mmc e o mdc?";
+        String texto2 = "Digite quais numeros seram utilizados nessas operações";
         String texto3 = "O minimo multiplo comum desses numeros é ";
         String texto4 = "O minimo divisor comum desses numeros é ";
         int quant=quant(texto1);
