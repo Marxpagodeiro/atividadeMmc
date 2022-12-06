@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class MMC {
     public static void main(String[] args) {
         String texto1 = "De quantos numeros você quer tirar o mmc?";
-        String texto2 = "Digite o numero que sera usado na operação";
+        String texto2 = "Digite os numeros que seram usados na operação";
         int quant=quant(texto1);
         int[] num = nuns(texto2,quant);
         int primo= 1;
@@ -61,6 +61,9 @@ public class MMC {
         for(int i =0;i<quant;i++){
             System.out.println(texto1);
             num[i]=in.nextInt();
+            if (num[i] < 0){
+                num[i] = -num[i];
+            }
         } 
         return num;
     }
@@ -121,7 +124,6 @@ public class MMC {
             }
         }
         return primoDiv;
-       
     }
     public static void divisao(int[] vet,int primo,boolean[] primoDiv){
         for (int i = 0; i < vet.length; i++) {
